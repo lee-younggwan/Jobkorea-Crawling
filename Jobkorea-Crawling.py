@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-f = open("C:\\Users\\LEEYOUNGGWAN\\Desktop\\질문.txt", "w")
+#저장하고 싶은 경로, 파일명 입력
+f = open("질문.txt", "w")
 
+#크롤링하고자 하는 회사의 url과 마지막 html 페이지 번호
 for page in range(13):
     req = requests.get('http://www.jobkorea.co.kr/starter/review/view?FavorCo_Stat=0&OrderBy=0&Page=1&C_Idx=1&Half_Year_Type_Code=0&Ctgr_Code=5&VPage=' + str(page + 1))
     raw = req.text
